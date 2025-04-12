@@ -2,6 +2,8 @@
 
 A WordPress plugin that allows customers to share their GPS location with your towing company.
 
+If you want to see how this looks go to https://trustedtowingsantafe.com/location to see it in action.
+
 ## Features
 
 - Customers can share their GPS location directly from your WordPress site
