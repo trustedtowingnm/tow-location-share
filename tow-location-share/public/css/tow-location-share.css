@@ -1,0 +1,203 @@
+/**
+ * Tow Location Share Plugin Styles
+ * These styles are designed to automatically adapt to your theme
+ */
+
+:root {
+    /* These variables will automatically try to match your theme's colors */
+    --tow-primary-color: var(--wp--preset--color--primary, var(--wp-block-button--color--background, #0073aa));
+    --tow-primary-hover: var(--wp--preset--color--primary-hover, var(--wp-block-button--color--text, #005177));
+    --tow-text-color: var(--wp--preset--color--text, var(--wp--style--color--text, inherit));
+    --tow-background: var(--wp--preset--color--background, var(--wp--style--color--background, #f8f8f8));
+    --tow-border-color: var(--wp--preset--color--border, #ddd);
+    --tow-success-color: var(--wp--preset--color--success, var(--wp--preset--color--green, #00a32a));
+    --tow-error-color: var(--wp--preset--color--error, var(--wp--preset--color--red, #d63638));
+    --tow-border-radius: var(--wp--preset--border-radius--medium, var(--wp--style--border--radius, 4px));
+    --tow-box-shadow: var(--wp--style--box-shadow, 0 2px 4px rgba(0, 0, 0, 0.1));
+    --tow-font-family: var(--wp--preset--font-family--body, var(--wp--style--body--typography--font-family, inherit));
+}
+
+.tow-location-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--tow-background);
+    border-radius: var(--tow-border-radius);
+    box-shadow: var(--tow-box-shadow);
+    color: var(--tow-text-color);
+    font-family: var(--tow-font-family);
+}
+
+.tow-location-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tow-location-header h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    /* Inherit heading styles from theme */
+    font-family: var(--wp--preset--font-family--heading, var(--wp--style--heading--typography--font-family, inherit));
+    font-weight: inherit;
+    color: inherit;
+}
+
+.tow-location-form {
+    margin-bottom: 20px;
+}
+
+.tow-location-form .form-group {
+    margin-bottom: 15px;
+}
+
+.tow-location-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.tow-location-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--tow-border-color);
+    border-radius: var(--tow-border-radius);
+    font-size: 16px;
+    /* Inherit input styles from theme */
+    font-family: var(--tow-font-family);
+    color: var(--tow-text-color);
+    background-color: var(--wp--preset--color--input-background, var(--wp--style--form--background, white));
+}
+
+.tow-location-map-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tow-location-map {
+    height: 300px;
+    width: 100%;
+    border-radius: var(--tow-border-radius, 4px);
+    margin-bottom: 10px;
+    border: 1px solid var(--tow-border-color, #ddd);
+}
+
+.tow-location-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tow-location-btn {
+    padding: 15px;
+    background-color: var(--tow-primary-color);
+    color: var(--wp--preset--color--background, white);
+    border: none;
+    border-radius: var(--tow-border-radius);
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--tow-font-family);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+}
+
+/* Style for the "Find My Location" button */
+#get-location-btn {
+    background-color: var(--tow-primary-color);
+}
+
+/* Style for the "Send Location" button - more prominent */
+#submit-location-btn {
+    background-color: var(--tow-success-color, #00a32a);
+    padding: 18px;
+    font-size: 20px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Add arrow icon to the submit button */
+#submit-location-btn:after {
+    content: " →";
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tow-location-btn:hover {
+    background-color: var(--tow-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#submit-location-btn:hover {
+    background-color: var(--tow-success-color, #00c32a);
+}
+
+.tow-location-btn.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.tow-location-error {
+    color: var(--tow-error-color, #d63638);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(var(--tow-error-color, 214, 54, 56), 0.1);
+    border-radius: var(--tow-border-radius, 4px);
+    margin-bottom: 15px;
+}
+
+.tow-location-success {
+    color: var(--tow-success-color, #00a32a);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(var(--tow-success-color, 0, 163, 42), 0.1);
+    border-radius: var(--tow-border-radius, 4px);
+    margin-bottom: 15px;
+}
+
+.tow-location-coords {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.tow-location-attribution {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.8;
+    color: var(--tow-text-color);
+}
+
+.tow-location-attribution a {
+    color: var(--tow-primary-color);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.tow-location-attribution a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .tow-location-buttons {
+        flex-direction: column;
+    }
+    
+    .tow-location-btn {
+        width: 100%;
+    }
+    
+    .tow-location-map {
+        height: 250px;
+    }
+} 
